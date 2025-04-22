@@ -1,0 +1,33 @@
+✅ Check if a Number is Prime
+A number is prime if it has exactly two divisors — 1 and itself.
+
+🔸 Java Code (Basic Approach)
+
+class Solution {
+    static boolean isPrime(int n) {
+        int c = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                c++;
+            }
+        }
+        return c == 2;
+    }
+}
+
+
+
+🔸 Python Code (Basic Approach)
+
+class Solution:
+    def isPrime(self, n):
+        c = 0
+        for i in range(1, n + 1):
+            if n % i == 0:
+                c += 1
+        return c == 2
+🔹 What’s happening?
+
+We count how many numbers divide n.
+
+If the count is exactly 2, it’s prime (only divisible by 1 and itself).
