@@ -1,0 +1,41 @@
+✅ Problem Statement:
+Find the HCF (Highest Common Factor) or GCD (Greatest Common Divisor) of two numbers.
+
+💡 Logic:
+There are two common ways to find GCD:
+
+Brute Force (Java code) – check all numbers from 1 to min(a, b).
+
+Euclidean Algorithm (Python code) – much faster and efficient using modulo %.
+
+🌟 Java Code (Brute Force Approach):
+class Solution {
+    public static int gcd(int a, int b) {
+        int gcd = 1;
+
+        // Loop from 1 to the smaller of a and b
+        for (int i = 1; i <= Math.min(a, b); i++) {
+            // If i divides both a and b, it is a common factor
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;  // Update gcd to the latest common factor
+            }
+        }
+
+        return gcd;  // Return the highest common factor found
+    }
+}
+
+
+
+✅ Python – Euclidean Algorithm (Efficient)
+class Solution:
+    def gcd(self, a: int, b: int) -> int:
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+
+
+🔹 What’s happening?
+We keep replacing a with b, and b with a % b until b becomes 0.
+At that point, a is the GCD.
