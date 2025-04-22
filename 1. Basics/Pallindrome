@@ -1,0 +1,52 @@
+Check if a given integer is a palindrome.
+A palindrome is a number that reads the same backward as forward, like 121 or 1331.
+
+💡 Logic:
+Save the original number (dup).
+
+Reverse the number (rev) using modulo and integer division.
+
+Compare the reversed number with the original number.
+
+If they are equal, return true (or True in Python); else return false (or False).
+
+🌟 Java Code with Explanation:
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        // Step 1: Initialize a variable to store the reversed number
+        int rev = 0;
+
+        // Step 2: Keep a copy of the original number to compare later
+        int dup = x;
+
+        // Step 3: Reverse the number using a loop
+        while (x > 0) {
+            int lastDigit = x % 10;            // Get the last digit
+            rev = (rev * 10) + lastDigit;      // Add it to the reversed number
+            x = x / 10;                        // Remove the last digit from x
+        }
+
+        // Step 4: Check if reversed number is equal to the original number
+        return rev == dup;
+    }
+}
+
+
+
+
+Python Code with Explanation:
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        # Step 1: Save the original number
+        dup = x
+        rev = 0
+
+        # Step 2: Reverse the number
+        while x > 0:
+            last = x % 10          # Get the last digit
+            rev = rev * 10 + last  # Add it to the reversed number
+            x = x // 10            # Remove the last digit
+
+        # Step 3: Compare reversed and original number
+        return rev == dup
