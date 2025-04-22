@@ -1,0 +1,48 @@
+✅ Armstrong Number Check
+An Armstrong number of k digits is a number such that the sum of each digit raised to the power k equals the number itself.
+
+🔸 Java Code
+
+class Solution {
+    static boolean armstrongNumber(int n) {
+        int k = String.valueOf(n).length();
+        int sum = 0;
+        int num = n;
+
+        while (n > 0) {
+            int ld = n % 10;
+            sum += Math.pow(ld, k);
+            n = n / 10;
+        }
+
+        return sum == num;
+    }
+}
+
+🔹 What’s happening?
+
+Count digits k
+
+For each digit, raise it to power k and add to sum
+
+Compare the final sum with the original number
+
+
+
+
+
+
+🔸 Python Code
+class Solution:
+    def armstrongNumber(self, n):
+        k = len(str(n))
+        sum = 0
+        num = n
+
+        while n > 0:
+            last = n % 10
+            sum += last ** k
+            n = n // 10
+
+        return sum == num
+
